@@ -1,5 +1,6 @@
 import Spotify from './spotify';
 import renderAlbums from './AlbumList';
+import renderAlbumInfo from './AlbumInfo';
 
 (async () => {
     try {
@@ -7,5 +8,14 @@ import renderAlbums from './AlbumList';
         const albumListEL = document.getElementById('album-list');
 
         renderAlbums(albums.items, albumListEL);
+    } catch (e) {}
+})();
+
+(async () => {
+    try {
+        const albumInfoEL = document.getElementById('album-info');
+        const data = await Spotify.album.getAlbum('2Y9IRtehByVkegoD7TcLfi');
+
+        renderAlbumInfo(data, albumInfoEL);
     } catch (e) {}
 })();
