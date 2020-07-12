@@ -11,6 +11,17 @@
         "ecmaVersion": 11,
         "sourceType": "module"
     },
+    "overrides": [
+        {
+            "files": [
+                "*.test.js",
+                "*.spec.js"
+            ],
+            "rules": {
+                "no-unused-expressions": "off"
+            }
+        }
+    ],
     "rules": {
         "indent": [
             "error",

@@ -6,7 +6,11 @@ describe('Spotify', () => {
         expect(spotify).to.be.an('object');
     });
 
-    it('should be seatch methods', () => {
+    it('should be search methods', () => {
         expect(spotify.search).to.exist;
+    });
+
+    it('should be album methods', () => {
+        expect(spotify.search.albums).to.exist;
     });
 });
