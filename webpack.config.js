@@ -8,12 +8,12 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, './app')
+        path: path.resolve(__dirname, './app'),
     },
     devServer: {
         contentBase: path.join(__dirname, './app'),
         compress: true,
-        port: 8000
+        port: 8000,
     },
     module: {
         rules: [
@@ -28,5 +28,5 @@ module.exports = {
         new webpack.SourceMapDevToolPlugin({
             exclude: [/node_modules/],
         }),
-    ]
+    ],
 };
