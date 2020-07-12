@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "npx webpack-dev-server",
     "lint": "npx eslint src/*.js",
-    "test": "npx mocha tests/**/*.spec.js --require",
-    "test:tdd": "npx mocha tests/**/*.spec.js --require --watch",
+    "test": "npx mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "npx mocha tests/**/*.spec.js --require @babel/register --watch",
     "test:coverage": "nyc npm test",
-    "prepush": "npm run lint && npm run test:coverage"
+    "prepush": "npm run lint && npm run test:coverage --require @babel/register"
   },
   "husky": {
     "hooks": {
@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.4",
     "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
     "eslint": "^7.4.0",
