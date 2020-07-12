@@ -1,6 +1,7 @@
 import Spotify from './spotify';
 import renderAlbums from './AlbumList';
 import renderAlbumInfo from './AlbumInfo';
+import renderAlbumTracks from './AlbumTracks';
 
 (async () => {
     try {
@@ -14,8 +15,10 @@ import renderAlbumInfo from './AlbumInfo';
 (async () => {
     try {
         const albumInfoEL = document.getElementById('album-info');
+        const albumTracksEL = document.getElementById('album-tracks');
         const data = await Spotify.album.getAlbum('2Y9IRtehByVkegoD7TcLfi');
 
-        renderAlbumInfo(data, albumInfoEL);
+        const albumData = renderAlbumInfo(data, albumInfoEL);
+        renderAlbumTracks(albumData.tracks.items, albumTracksEL);
     } catch (e) {}
 })();
