@@ -1,5 +1,5 @@
 import Spotify from './spotify';
-import renderAlbums from './Album';
+import renderAlbums from './AlbumList';
 
 (async () => {
     try {

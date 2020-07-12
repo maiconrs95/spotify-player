@@ -1,6 +1,6 @@
 import 'jsdom-global/register';
 import { expect } from 'chai';
-import renderAlbums from '../src/Album';
+import renderAlbums from '../src/AlbumList';
 
 describe('Album List', () => {
     it('should exist', () => {
