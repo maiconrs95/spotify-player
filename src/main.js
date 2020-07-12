@@ -1,11 +1,9 @@
 import Spotify from './spotify';
-import rendeAlbums from './Album';
+import renderAlbums from './Album';
 
 (async () => {
-    try {
-        const albums = await Spotify.search.albums('red-hot-chili-peppers');
-        console.log(albums);
-    } catch (e) {
-        console.log(e);
-    }
+    const { albums } = await Spotify.search.albums('red-hot-chili-peppers');
+    const albumListEL = document.getElementById('album-list');
+
+    renderAlbums(albums.items, albumListEL);
 })();
