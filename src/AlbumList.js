@@ -1,6 +1,6 @@
 function creatreMarkup(data) {
     return data.map((album) => `
-        <div class="list-item">
+        <div data-album-id="${album.id}" class="list-item">
             <img src="${album.images[2].url}" alt="${album.name}" class="list-image">
             <div class="list-description">
                 <p class="list-title">${album.name}</p>

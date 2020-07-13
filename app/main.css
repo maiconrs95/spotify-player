@@ -92,6 +92,10 @@
     transition: opacity .4s;
   }
 
+  .list-item * {
+      pointer-events: none;
+  }
+
   .list-item:nth-of-type(even) {
     background: rgba(29, 32, 40, 0.61);
   }
