@@ -1,16 +1,9 @@
 import Spotify from './spotify';
-import renderAlbums from './AlbumList';
+import searchEnterTrigger from './SearchTrigger';
 import renderAlbumInfo from './AlbumInfo';
 import renderAlbumTracks from './AlbumTracks';
 
-(async () => {
-    try {
-        const { albums } = await Spotify.search.albums('red-hot-chili-peppers');
-        const albumListEL = document.getElementById('album-list');
-
-        renderAlbums(albums.items, albumListEL);
-    } catch (e) {}
-})();
+searchEnterTrigger();
 
 (async () => {
     try {
@@ -20,5 +13,7 @@ import renderAlbumTracks from './AlbumTracks';
 
         const albumData = renderAlbumInfo(data, albumInfoEL);
         renderAlbumTracks(albumData.tracks.items, albumTracksEL);
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 })();
